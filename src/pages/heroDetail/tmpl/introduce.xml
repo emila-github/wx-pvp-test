@@ -1,0 +1,121 @@
+<import src="../../wxParse/wxParse"/>
+<import src="armList"/>
+<template name="introduce">
+    <view class="wx-box">
+        <view class="wx-hd">技能说明</view>
+        <view class="wx-bd">
+            <view class="jineng-tab">
+                <block wx:for="{{hero.skill}}">
+                    <view class="li {{item.open? 'active': ''}}"  bindtap="clickTab" data-tab-name="hero.skill" data-index="{{index}}">
+                        <image src="{{item.skillpic}}"></image>
+                        <text>{{item.skillname}}</text>
+                    </view>
+                </block>
+            </view>
+            <view class="jineng-con">
+                <block wx:for="{{hero.skill}}">
+                    <view class="li {{item.open? 'active': ''}}">
+                        <text>{{item.skillname}}</text>
+                        <text wx:if="{{item.skillcool}}">冷却：{{item.skillcool}}</text>
+                        <text wx:if="{{item.skillspend}}">消耗：{{item.skillspend}}</text>
+                        <text>{{item.skilldesc}}</text>
+                        <text wx:if="{{item.skilltips}}">tips:{{item.skilltips}}</text>
+                    </view>
+                </block>
+            </view>
+        </view>
+    </view>
+
+    <view class="wx-box">
+        <view class="wx-hd">技能加点建议</view>
+        <view class="wx-bd">
+            {{officeDetail.addskill1}}
+        </view>
+    </view>
+
+    <view class="wx-box">
+        <view class="wx-hd">铭文搭配建议</view>
+        <view class="wx-bd">
+            <view>红色：{{officeDetail.redrune1}}</view>
+            <view>绿色：{{officeDetail.greenrune1}}</view>
+            <view>蓝色：{{officeDetail.bluerune1}}</view>
+        </view>
+    </view>
+    <view class="wx-box">
+        <view class="wx-hd">顺风出装建议</view>
+        <view class="wx-bd">
+            <template is="armList" data="{{arms: hero.armsCis}}"></template>
+        </view>
+    </view>
+    <view class="wx-box">
+        <view class="wx-hd">逆风出装建议</view>
+        <view class="wx-bd">
+            <template is="armList" data="{{arms: hero.armsInverse}}"></template>
+        </view>
+    </view>
+    <view class="wx-box">
+        <view class="wx-hd">英雄关系</view>
+        <view class="wx-bd">
+
+            <view class="wx-box">
+                <view class="wx-hd">最佳搭档</view>
+                <view class="wx-bd">
+
+                    <view class="pp-list">
+                        <block wx:for="{{hero.partnerheros}}">
+                            <navigator url="../heroDetail/heroDetail?heroid={{item.heroOffId}}" class="pp-item">
+                                <image src="{{item.heroPic}}" mode="aspectFit"></image>
+                                <view class="desc">
+                                    <text class="pp-name">{{item.heroName}}</text>
+                                    <text>{{item.herodesc}}</text>
+                                </view>
+                            </navigator>
+                        </block>
+                    </view>
+
+                </view>
+            </view>
+
+            <view class="wx-box">
+                <view class="wx-hd">被谁克制</view>
+                <view class="wx-bd">
+                    <view class="pp-list">
+                        <block wx:for="{{hero.passiveheros}}">
+                            <navigator url="../heroDetail/heroDetail?heroid={{item.heroOffId}}" class="pp-item">
+                                <image src="{{item.heroPic}}" mode="aspectFit"></image>
+                                <view class="desc">
+                                    <text class="pp-name">{{item.heroName}}</text>
+                                    <text>{{item.herodesc}}</text>
+                                </view>
+                            </navigator>
+                        </block>
+                    </view>
+                </view>
+            </view>
+
+            <view class="wx-box">
+                <view class="wx-hd">使用技巧</view>
+                <view class="wx-bd">
+                    <template is="wxParse" data="{{wxParseData:hero.useskill.nodes}}"/>
+                    <!--{{officeDetail.useskill}}-->
+                </view>
+            </view>
+
+            <view class="wx-box">
+                <view class="wx-hd">对抗技巧</view>
+                <view class="wx-bd">
+                    <template is="wxParse" data="{{wxParseData:hero.confrontskill.nodes}}"/>
+                    <!--{{officeDetail.confrontskill}}-->
+                </view>
+            </view>
+
+            <view class="wx-box">
+                <view class="wx-hd">团战思路</view>
+                <view class="wx-bd">
+                    {{officeDetail.battlegroup}}
+                </view>
+            </view>
+
+        </view>
+    </view>
+</template>

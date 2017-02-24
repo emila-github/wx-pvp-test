@@ -1,0 +1,15 @@
+<template name="videoList">
+    <view class="wx-videoList">
+        <navigator url="videoDetail/videoDetail?id={{item.id}}" class="wx-videoLi" wx:for="{{videos}}">
+            <view class="avatar" hover="{{true}}" hover-class="hover">
+                <image src="{{item.pic}}"></image>
+                <view class="cover">
+                    <view class="mask"></view>
+                    <view class="ico ico-video"></view>
+                </view>
+            </view>
+            <view class="wx-title">{{item.title}}</view>
+            <view class="wx-time">{{item.time}}</view>
+        </navigator>
+    </view>
+</template>

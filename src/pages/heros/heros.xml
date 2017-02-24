@@ -1,0 +1,24 @@
+<import src="../common/footer"/>
+<view class="page">
+    <scroll-view scroll-x="true">
+        <view class="hero-type">
+            <block wx:for="{{ navItems}}">
+                <view bindtap="navItemTap" class="scroll-view-item {{ navBtnSelectIdx == item.id ? 'scroll-view-item-hover' : '' }}" data-index="{{item.id}}"  data-name="{{item.name}}">{{item.name}}</view>
+            </block>
+        </view>
+    </scroll-view>
+
+    <view class="hero-list hero-list-wrap">
+        <block wx:for="{{ heros }}">
+            <navigator url="../heroDetail/heroDetail?heroid={{item.offId}}" class="item" wx:if="{{item.show}}" data-range="{{item.hero_type}}">
+                <view class="pic">
+                    <view class="hero_new" wx:if="{{item.new_type == 1}}"></view>
+                    <view class="hero_free" wx:if="{{item.pay_type == 10}}"></view>
+                    <image src="{{item.src}}" mode="aspectFit"></image>
+                </view>
+                <text>{{item.cname}}</text>
+            </navigator>
+        </block>
+    </view>
+    <template is="footer"/>
+</view>

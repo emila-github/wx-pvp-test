@@ -1,0 +1,6 @@
+<template name="header">
+    <view class="header">
+        <!--<image class="gb-topbar-logo" src="../../images/logo.png" mode="aspectFit"></image>-->
+        <text class="gb-topbar-game">17173-王者荣耀</text>
+    </view>
+</template>

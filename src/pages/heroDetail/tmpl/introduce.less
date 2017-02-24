@@ -1,0 +1,117 @@
+@import "../../common/gb";
+// 技能说明
+.jineng-tab{
+  .flex-row;
+  font-size: 24rpx;
+}
+.jineng-tab .li {
+  max-width: 25%;
+  flex: 1;
+  text-align: center;
+  position: relative;
+  .flex-column;
+}
+.jineng-tab .li image{
+  max-width: 100rpx;
+  max-height: 100rpx;
+  margin: 0 auto;
+}
+.jineng-tab .li text{
+  padding:10rpx 0;
+}
+.jineng-tab .active image:after {
+  content: "";
+  border-width: 0 6px 6px 6px;
+  border-style: solid;
+  border-color: #eaeceb transparent;
+  transition: transform .25s;
+  //background: url(//game.gtimg.cn/images/yxzj/ingame/icon_san.jpg);
+  width: 0px;
+  height: 0px;
+  background-size: 9px 8px;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  margin: 0 auto;
+}
+.jineng-con{
+  font-size: 28rpx;
+  background-color: #eaeceb;
+  padding: 20rpx;
+}
+.jineng-con .li{
+  .flex-column;
+  display: none;
+}
+.jineng-con .active{
+  display: flex;
+}
+// 出装建议
+.arm-box {
+  width: 93.829%;
+  border-radius: 5px;
+  //box-shadow: 0 0 2px rgba(0, 0, 0, 0.17);
+  padding: 0.9rem 3.171%;
+  background: #fff;
+}
+.arm-item {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 20rpx;
+  .flex-row;
+}
+.arm-item-l {
+  height: 120rpx;
+  min-width: 20%;
+  line-height: 120rpx;
+  overflow: hidden;
+}
+.arm-item-r{
+  flex: 1;
+}
+.arm-item-l .h3 {
+  font-size: 24rpx;
+  padding: 0 10rpx 0 20rpx;
+  color: #535353;
+  position: relative;
+}
+//.arm-item-l .h3:before {
+//  position: absolute;
+//  content: "";
+//  width: 2px;
+//  height: 25%;
+//  background-color: #338ada;
+//  top: 50%;
+//  transform: translateY(-50%);
+//}
+.arm-item-l .h3 span {
+  margin-left: 10%;
+}
+.arm-item-r .arm-list .wx-imageLi{
+  min-width: 27%;
+  max-width: 27%;
+}
+//.arm-item-r .arm-list .wx-imageLi .img-box{
+//  width: 70rpx;
+//  height: 70rpx;
+//}
+
+
+// 英雄关系
+.pp-list{}
+.pp-list .pp-item{
+  .flex-row;
+  margin-bottom: 10rpx;
+}
+.pp-list image{
+  min-width: 100rpx;
+  min-height: 100rpx;
+  max-width: 100rpx;
+  max-height: 100rpx;
+  display: block;
+  border-radius: 10rpx;
+  border: 1px solid #627fb0;
+}
+.pp-list .desc{ padding-left: 20rpx; font-size: 28rpx; line-height: 50rpx;}
+.pp-list .desc .pp-name{background-color: #bf9c53; color: #fff; border-radius: 10rpx; padding: 0 10rpx; margin-right: 10rpx;}

@@ -1,0 +1,70 @@
+<import src="tmpl/introduce"/>
+<import src="../common/newsList"/>
+<import src="../common/videoList"/>
+<view class="hero-header" style="background:url({{hero.heroHeaderBg}}) no-repeat;background-size: cover;">
+    <image class="hero-face" src="{{hero.heroFace}}" mode="aspectFit" />
+    <view class="hero-attr">
+        <view>{{officeDetail.title}} - {{officeDetail.name}}</view>
+        <view>{{hero.heroType}} {{hero.heroFeature}}</view>
+    </view>
+    <view class="history">
+        背景故事
+    </view>
+</view>
+<view class="hero-video">
+    <view class="video-pic" wx:if="{{!hero.showVideo}}" bindtap="showVideo">
+        <view class="ico ico-video"></view>
+        <image src="{{hero.videoPic}}"></image>
+    </view>
+    <video id="gameIntro" src="{{hero.video}}" controls="{{true}}" ></video>
+</view>
+<view class="hero-box">
+    <view class="hero-box-hd">
+        <view class="nav-tabs">
+            <block wx:for="{{pageTab}}">
+                <view class="nav-item {{item.open? 'nav-item-active': ''}}"  bindtap="clickTab" data-tab-name="pageTab" data-index="{{index}}">{{item.name}}</view>
+            </block>
+        </view>
+    </view>
+    <view class="hero-box-bd">
+        <view class="box-item" wx:if="{{pageTab[0]['open']}}">
+            <scroll-view scroll-y="true" style="height: 500px;">
+                <template is="introduce" data="{{officeDetail, hero}}"></template>
+            </scroll-view>
+        </view>
+        <view class="box-item" wx:if="{{pageTab[1]['open']}}">
+
+            <view class="wx-box">
+                <view class="wx-hd">{{pageTab[1]["name"]}}攻略</view>
+                <view class="wx-bd">
+                    <template is="newsList" data="{{news}}"></template>
+                </view>
+            </view>
+            <view class="wx-box">
+                <view class="wx-hd">{{pageTab[1]["name"]}}视频</view>
+                <view class="wx-bd">
+                    <template is="videoList" data="{{videos}}"></template>
+                </view>
+            </view>
+
+        </view>
+        <view class="box-item" wx:if="{{pageTab[2]['open']}}">
+            <view class="wx-box">
+                <view class="wx-hd">{{pageTab[2]["name"]}}攻略</view>
+                <view class="wx-bd">
+                    <template is="newsList" data="{{news}}"></template>
+                </view>
+            </view>
+            <view class="wx-box">
+                <view class="wx-hd">{{pageTab[2]["name"]}}视频</view>
+                <view class="wx-bd">
+                    <template is="videoList" data="{{videos}}"></template>
+                </view>
+            </view>
+        </view>
+        <view class="box-item" wx:if="{{pageTab[3]['open']}}">
+            {{pageTab[3]["name"]}}
+        </view>
+
+    </view>
+</view>

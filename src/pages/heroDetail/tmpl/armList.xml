@@ -1,0 +1,23 @@
+<template name="armList">
+    <view class="arm-box">
+        <block wx:for="{{arms}}">
+            <view class="arm-item">
+                <view class="arm-item-l">
+                    <view class="h3">{{item.label}}</view>
+                </view>
+                <view class="arm-item-r">
+                    <view class="wx-imageList arm-list">
+                        <block wx:for="{{item.datas}}" wx:for-item="itemImg">
+                            <view class="wx-imageLi">
+                                <view class="img-box" data-id="{{itemImg.id}}">
+                                    <image src="{{itemImg.src}}" mode="aspectFit"></image>
+                                </view>
+                                <view class="h4">{{itemImg.title}}</view>
+                            </view>
+                        </block>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+</template>

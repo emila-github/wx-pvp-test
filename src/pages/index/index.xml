@@ -1,0 +1,75 @@
+<import src="../common/newsList"/>
+<import src="../common/videoList"/>
+<import src="../common/header"/>
+<import src="../common/footer"/>
+<import src="tmpl/heroList"/>
+<view class="page">
+    <template is="header" data="{{ citys, currentCity }}"/>
+    <swiper indicator-dots="{{indicatorDots}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActiveColor}}"
+            autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{imgUrls}}">
+            <swiper-item>
+                <image src="{{item}}" class="slide-image" width="355" height="150"/>
+            </swiper-item>
+        </block>
+    </swiper>
+
+    <view class="wx-box">
+        <view class="wx-hd">
+            <text>每周限免英雄</text>
+        </view>
+        <view class="wx-bd">
+            <template is="heroList" data="{{heroList: freeHeroList}}"></template>
+        </view>
+    </view>
+
+    <view class="wx-box">
+        <view class="wx-hd">
+            <text>热门英雄</text>
+        </view>
+        <view class="wx-bd">
+            <template is="heroList" data="{{heroList: freeHeroList}}"></template>
+        </view>
+    </view>
+
+    <view class="wx-box">
+        <view class="wx-hd">福利早知道</view>
+        <view class="wx-bd">
+            <template is="newsList" data="{{news: newsFl}}"></template>
+        </view>
+    </view>
+
+    <!--<view class="wx-box">-->
+        <!--<view class="wx-hd">资讯</view>-->
+        <!--<view class="wx-bd">-->
+            <!--<template is="newsList" data="{{news: newsTy}}"></template>-->
+        <!--</view>-->
+    <!--</view>-->
+    <!--<view class="wx-box">-->
+        <!--<view class="wx-hd">体验服</view>-->
+        <!--<view class="wx-bd">-->
+            <!--<template is="newsList" data="{{news: newsTy}}"></template>-->
+        <!--</view>-->
+    <!--</view>-->
+    <view class="wx-box">
+        <view class="wx-hd">
+            <text>精彩视频</text>
+            <navigator class="wx-more" url="videoList/videoList">more</navigator>
+        </view>
+        <view class="wx-bd">
+            <template is="videoList" data="{{videos: videosJc}}"></template>
+        </view>
+    </view>
+    <view class="wx-box">
+        <view class="wx-hd">
+            <text>精品攻略</text>
+            <navigator class="wx-more" url="videoList/videoList">more</navigator>
+        </view>
+        <view class="wx-bd">
+            <template is="newsList" data="{{news: newsGl}}"></template>
+        </view>
+    </view>
+
+
+    <template is="footer"/>
+</view>

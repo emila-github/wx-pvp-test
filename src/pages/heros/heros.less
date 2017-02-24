@@ -1,0 +1,79 @@
+@import "../common/gb";
+@import "../common/header";
+@import "../common/footer";
+
+.hero-type{
+  .flex-row;
+  .scroll-view-h;
+  border-bottom: #ededed solid 1px;
+  margin-bottom: 10rpx;
+  padding: 0 20rpx;
+}
+.hero-type .scroll-view-item{
+  flex: 1;
+  padding: 10rpx;
+  line-height: 80rpx;
+}
+.hero-type .scroll-view-item-hover{
+  color: #376cca;
+  border-bottom: #376cca solid 1px;
+}
+
+.hero-list{
+  .flex-row;
+  padding: 20rpx;
+}
+.hero-list .item{
+  flex: 1;
+  min-width: 20%;
+  max-width: 20%;
+  text-align: center;
+  padding: 10px 0;
+  .flex-column;
+}
+.hero-list .item .pic{
+  position: relative;
+  display: block;
+  width: 120rpx;
+  height: 120rpx;
+  margin:0 auto;
+  border: 1px solid #627fb0;
+  //border-radius: 100%;
+  border-radius: 10rpx;
+  justify-content: center;
+  text-align: center;
+}
+.hero-list .item image{
+  width: 100%;
+  height: 100%;
+}
+.hero-list .item text{
+  font-size: 24rpx;
+  padding: 10rpx 0;
+}
+.hero_icon{
+  display: block;
+  width: 40px;
+  height: 40px;
+  z-index: 99;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-size: 100%;
+}
+.hero_new{
+  background: url(../../images/hero-icon1.png) no-repeat;
+  .hero_icon;
+}
+.hero_free{
+  background: url(../../images/hero-icon2.png) no-repeat;
+  .hero_icon;
+}
+
+
+.hero-list-wrap{
+  .hero-list;
+  flex-wrap:wrap;
+  //justify-content:space-around;
+  //justify-content: space-between;
+}

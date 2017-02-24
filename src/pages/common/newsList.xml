@@ -1,0 +1,9 @@
+<template name="newsList">
+    <view class="wx-newsList">
+        <navigator url="newDetail/newDetail?id={{item.id}}" class="wx-newsLi" wx:for="{{news}}">
+            <view class="wx-type">[{{item.type}}]</view>
+            <view class="wx-title">{{item.title}}</view>
+            <view class="wx-time">{{item.time}}</view>
+        </navigator>
+    </view>
+</template>

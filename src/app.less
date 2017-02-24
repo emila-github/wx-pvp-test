@@ -1,0 +1,116 @@
+// Global style write by less
+// Build to dist/app.wxss
+@import "pages/common/gb";
+page {
+  background-color: #fff;
+  color: #313131;
+  font-family: -apple-system-font, 'Helvetica Neue', Helvetica, 'Microsoft YaHei', sans-serif;
+  font-size: 32rpx;
+  //font-size: 62.5%;
+}
+.page{
+
+}
+
+.wx-newsList{
+  .flex-column;
+}
+.wx-newsLi{
+  .flex-row;
+  height: 24px;
+  line-height: 24px;
+}
+.wx-newsList .wx-type{
+  min-width: 100rpx;
+}
+.wx-newsList .wx-title{
+  white-space: nowrap;text-overflow:ellipsis; overflow:hidden;
+  flex: 1;
+
+}
+.wx-newsList .wx-time{
+ min-width: 100rpx;
+}
+
+
+.wx-videoList{
+ .flex-row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.wx-videoList .wx-videoLi{
+  .flex-column;
+  max-width: 46%;
+  min-width: 46%;
+  flex: 1;
+  padding: 10rpx;
+}
+.wx-videoList .avatar{
+  width: 100%;
+  height: 200rpx;
+  position: relative;
+}
+.wx-videoList .avatar image{
+  border-radius: 20rpx;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.wx-videoList .avatar .cover {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}
+.wx-videoList .mask {
+  border-radius: 20rpx;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #000;
+  opacity: .3;
+  //filter: alpha(opacity=50);
+  z-index: -1;
+}
+.wx-videoList .hover .mask {
+  opacity: 0;
+}
+
+.wx-videoList .wx-title{
+  padding: 10rpx 0 0;
+  margin-bottom: 10rpx;
+  font-size: 28rpx;
+  line-height: 32rpx;
+  height: 64rpx;
+  overflow: hidden;
+}
+
+
+.wx-imageList {
+  .flex-row;
+}
+.wx-imageList .wx-imageLi {
+  min-width: 25%;
+  max-width: 25%;
+  .flex-column;
+}
+.wx-imageList .wx-imageLi .img-box {
+  width: 120rpx;
+  height: 120rpx;
+  //border-radius: 10%;
+  margin: 0 auto;
+}
+.wx-imageList .wx-imageLi .img-box image {
+  width: 100%;
+  height: 100%;
+}
+.wx-imageList .wx-imageLi .h4 {
+  font-size: 24rpx;
+  padding: 10rpx 0;
+  text-align: center;
+}
+

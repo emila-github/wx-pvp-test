@@ -1,0 +1,10 @@
+<template name="heroList">
+    <scroll-view scroll-x="true">
+        <view class="hero-list scroll-view-h">
+            <navigator url="../heroDetail/heroDetail?heroid={{item.offId}}" class="item" data-type="{{item.hero_type}}" wx:for="{{ heroList }}">
+                <image src="{{item.src}}" mode="aspectFit" />
+                <text>{{item.cname}}</text>
+            </navigator>
+        </view>
+    </scroll-view>
+</template>
