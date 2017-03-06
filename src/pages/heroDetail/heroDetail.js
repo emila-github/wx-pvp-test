@@ -85,17 +85,19 @@ Page({
     let officeDetail = this.data.officeDetail
     // 技能介绍
     let skill = []
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 5; i++) {
       let idx = i + 1
-      skill[i] = {}
-      skill[i]['open'] = i === 0
-      skill[i]['skillname'] = officeDetail['skillname' + idx]
-      skill[i]['skillid'] = officeDetail['skillid' + idx]
-      skill[i]['skillpic'] = that.skillImg(skill[i]['skillid'])
-      skill[i]['skilldesc'] = officeDetail['skilldesc' + idx]
-      skill[i]['skillcool'] = officeDetail['skillcool' + idx]
-      skill[i]['skillspend'] = officeDetail['skillspend' + idx]
-      skill[i]['skilltips'] = officeDetail['skilltips' + idx]
+      if (officeDetail.hasOwnProperty(`skillname${idx}`) && officeDetail['skillname' + idx]) {
+        skill[i] = {}
+        skill[i]['open'] = i === 0
+        skill[i]['skillname'] = officeDetail['skillname' + idx]
+        skill[i]['skillid'] = officeDetail['skillid' + idx]
+        skill[i]['skillpic'] = that.skillImg(skill[i]['skillid'])
+        skill[i]['skilldesc'] = officeDetail['skilldesc' + idx]
+        skill[i]['skillcool'] = officeDetail['skillcool' + idx]
+        skill[i]['skillspend'] = officeDetail['skillspend' + idx]
+        skill[i]['skilltips'] = officeDetail['skilltips' + idx]
+      }
     }
     // 最佳搭档
     let partnerheros = []

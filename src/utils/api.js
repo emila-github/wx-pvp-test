@@ -65,9 +65,26 @@ function fetchVideoInfo (vids) {
   }
   let url = 'https://h5vv.video.qq.com'
   let params = {
+    guid: newGuid(),
+    platform: 11001,
+    charge: 0,
     otype: 'json',
     vids: vids
   }
   return fetch(url, 'getinfo', params)
+}
+// function createGUID (a) {
+//  a = a || 32
+//  for (var b = '', c = 1; a >= c; c++) {
+//    var d = Math.floor(16 * Math.random()).toString(16)
+//    b += d
+//  }
+//  return b
+// }
+function newGuid () {
+  function a () {
+    return (65536 * (1 + Math.random()) | 0).toString(16).substring(1)
+  }
+  return [a(), a(), a(), a(), a(), a(), a(), a()].join('')
 }
 module.exports = { fetchApi, fetchHeros, fetchHeroInfo, fetchSummoner, fetchMing, fetchArm, fetchVids, fetchVideoInfo }
